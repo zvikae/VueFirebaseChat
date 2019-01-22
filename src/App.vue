@@ -1,6 +1,13 @@
 
 <template>
-  <div>
+  <div class = 'main-app'>
+		<div class="messages">
+				<h3>Messages</h3>
+				<div class="message" v-for="message in messages">
+					<strong>{{message.username}}</strong>
+					<p>{{message.text}}</p>
+				</div>
+		</div>
     <div v-if="!username">
         You can't chat without a name. What's your name? <br />
         <input type="text" placeholder="Name" v-on:keyup.enter="updateUsername">
@@ -11,13 +18,6 @@
         <textarea name="" id="" cols="30" rows="10" placeholder="New Message" v-on:keyup.enter="sendMessage"></textarea>
     </div>
 		<hr>
-	<div class="messages">
-			<h3>Messages</h3>
-			<div class="message" v-for="message in messages">
-				<strong>{{message.username}}</strong>
-				<p>{{message.text}}</p>
-			</div>
-	</div>
   </div>
 </template>
 <script>
@@ -70,3 +70,11 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.main-app {
+	border: 1px solid red;
+	width: 70%;
+	margin: 0 auto;
+}
+</style>
