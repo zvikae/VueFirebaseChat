@@ -1,4 +1,4 @@
-# firebase-chat
+# Vue.js and Firebase Chat App
 
 ## Project setup
 ```
